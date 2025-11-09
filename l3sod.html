@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ElectroWorld | Modern Electronics Store</title>
+<style>
+/* ====== BASIC STYLING ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #f4f4f9;
+  color: #222;
+  overflow-x: hidden;
+}
+
+/* ====== HEADER ====== */
+header {
+  background: linear-gradient(90deg, #0a0a23, #1b1b4b);
+  color: white;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+header h1 {
+  color: #00e0ff;
+  font-size: 26px;
+}
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #00e0ff;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: url('https://images.unsplash.com/photo-1581091012184-7c4f3b4ce2d4') center/cover no-repeat;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  animation: fadeIn 2s ease;
+}
+.hero h2 {
+  font-size: 48px;
+  animation: glow 3s infinite alternate;
+}
+.hero p {
+  font-size: 18px;
+  margin-top: 15px;
+}
+.hero button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #00e0ff;
+  color: black;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.hero button:hover {
+  background: #008fb3;
+  color: white;
+}
+
+/* ====== PRODUCTS ====== */
+.products {
+  padding: 60px 40px;
+  background: white;
+}
+.products h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+.product {
+  background: #fdfdfd;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s;
+}
+.product:hover {
+  transform: translateY(-10px);
+}
+.product img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.product h3 {
+  margin: 10px 0;
+}
+.product button {
+  padding: 10px 20px;
+  border: none;
+  background: #00e0ff;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.product button:hover {
+  background: #008fb3;
+  color: white;
+}
+
+/* ====== ABOUT SECTION ====== */
+.about {
+  background: #f4f4f9;
+  padding: 60px 50px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.about img {
+  width: 45%;
+  border-radius: 20px;
+}
+.about-text {
+  flex: 1;
+}
+.about-text h2 {
+  margin-bottom: 15px;
+  font-size: 30px;
+}
+.about-text p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ====== SERVICES ====== */
+.services {
+  padding: 60px 40px;
+  background: white;
+}
+.services h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.service {
+  background: #0a0a23;
+  color: white;
+  width: 280px;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, background 0.3s;
+}
+.service:hover {
+  transform: scale(1.05);
+  background: #00e0ff;
+  color: black;
+}
+
+/* ====== CONTACT SECTION ====== */
+.contact {
+  padding: 60px 40px;
+  background: #f4f4f9;
+}
+.contact h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+form input, form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+form button {
+  background: #00e0ff;
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+form button:hover {
+  background: #008fb3;
+  color: white;
+}
+
+/* ====== FOOTER ====== */
+footer {
+  background: #0a0a23;
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* ====== ANIMATIONS ====== */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes glow {
+  from {text-shadow: 0 0 10px #00e0ff;}
+  to {text-shadow: 0 0 25px #00ffff;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>ElectroWorld</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h2>Welcome to ElectroWorld</h2>
+  <p>Your trusted online electronics marketplace</p>
+  <button onclick="scrollToSection('products')">Shop Now</button>
+</section>
+
+<section class="products" id="products">
+  <h2>Our Featured Products</h2>
+  <div class="product-list">
+    <div class="product"><img src="https://m.media-amazon.com/images/I/71vFKBpKakL._AC_SL1500_.jpg"><h3>HP Laptop</h3><p>$850</p><button>Add to Cart</button></div>
+    <div class="product"><img src="https://m.media-amazon.com/images/I/81CgtwSII3L._AC_SL1500_.jpg"><h3>iPhone 15 Pro</h3><p>$1100</p><button>Add to Cart</button></div>
+    <div class="product"><img src="https://m.media-amazon.com/images/I/61CGHv6kmWL._AC_SL1500_.jpg"><h3>Gaming Headphones</h3><p>$90</p><button>Add to Cart</button></div>
+    <div class="product"><img src="https://m.media-amazon.com/images/I/61LtuGzXeaL._AC_SL1500_.jpg"><h3>Wireless Mouse</h3><p>$25</p><button>Add to Cart</button></div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+  <div class="about-text">
+    <h2>About ElectroWorld</h2>
+    <p>ElectroWorld is a modern electronics store offering the latest gadgets and devices at unbeatable prices. From smartphones and laptops to accessories and gaming equipment, we bring innovation closer to you.</p>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <h2>Our Services</h2>
+  <div class="service-list">
+    <div class="service"><h3>Online Shopping</h3><p>Shop from the comfort of your home with fast and secure delivery.</p></div>
+    <div class="service"><h3>Customer Support</h3><p>We offer 24/7 assistance for all your product inquiries.</p></div>
+    <div class="service"><h3>Warranty & Repairs</h3><p>Enjoy up to 2 years of warranty and free repair services.</p></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <form onsubmit="sendMessage(event)">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 ElectroWorld | Designed by HAVUGIMANA Benjamin</p>
+</footer>
+
+<script>
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+function sendMessage(e){
+  e.preventDefault();
+  alert("Thank you for contacting ElectroWorld!");
+}
+</script>
+
+</body>
+</html>
